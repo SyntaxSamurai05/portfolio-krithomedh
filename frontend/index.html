@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KOMMI VENKATA SAI DEVANSH | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">Devansh Kommi</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="resume.pdf" target="_blank" class="resume-btn"><i class="fa-solid fa-file-pdf"></i> Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="about" class="section hero">
+    <div class="container">
+      <span class="badge"><i class="fa-solid fa-code"></i> Full-Stack & Systems Developer</span>
+      <h1>Building scalable platforms & low-level system backends.</h1>
+      <p class="hero-desc">
+        I'm <strong>Devansh Kommi</strong>, a Computer Science undergraduate at <strong>VNR VJIET</strong> and Data Science scholar at <strong>IIT Madras</strong>. I specialize in backend architecture, process management simulations, and edge AI workflows.
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/SyntaxSamurai05" target="_blank" class="btn"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://leetcode.com/u/devanshk14/" target="_blank" class="btn"><i class="fa-solid fa-code"></i> LeetCode</a>
+        <a href="https://in.linkedin.com/in/devansh-kommi-82388a380" target="_blank" class="btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </header>
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">Real-world systems, web applications, and embedded architectures.</p>
+      
+      <div class="projects-grid">
+        <div class="card">
+          <h3>MedVault Core</h3>
+          <p class="card-tagline">Patient-Held Health Record Platform</p>
+          <ul class="card-list">
+            <li>Consent-driven record access engine with WebSocket verification.</li>
+            <li>RESTful APIs for automated record audits and doctor authentication.</li>
+          </ul>
+          <div class="tags">
+            <span>Node.js</span><span>Express</span><span>MongoDB</span><span>WebSockets</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>CPU Scheduling Simulator</h3>
+          <p class="card-tagline">Operating System Execution Engine</p>
+          <ul class="card-list">
+            <li>Engineered core FCFS, SJF, SRTF, Priority, and Round Robin algorithms in C.</li>
+            <li>Flask backend generating dynamic execution timelines and Gantt charts.</li>
+          </ul>
+          <div class="tags">
+            <span>C</span><span>Python</span><span>Flask</span><span>HTML5</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Repo Guardian</h3>
+          <p class="card-tagline">On-Device AI Code Reviewer (iQOO Hackathon)</p>
+          <ul class="card-list">
+            <li>Local offline code analysis using quantized GGUF models and llama.cpp.</li>
+            <li>Static pipelines detecting vulnerabilities and prompt injections.</li>
+          </ul>
+          <div class="tags">
+            <span>Python</span><span>llama.cpp</span><span>Edge AI</span><span>Shell</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Vehicle Rental System</h3>
+          <p class="card-tagline">OOP Backend & Transaction Manager</p>
+          <ul class="card-list">
+            <li>Full OOP hierarchy with encapsulation, polymorphism, and custom exceptions.</li>
+            <li>Direct JDBC integration for booking queries and database persistence.</li>
+          </ul>
+          <div class="tags">
+            <span>Java</span><span>JDBC</span><span>MySQL</span><span>OOP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Languages</h4>
+          <p>Python, C, Java, JavaScript, SQL</p>
+        </div>
+        <div class="skill-category">
+          <h4>Frameworks & Backend</h4>
+          <p>Node.js, Express.js, Flask, Tailwind CSS</p>
+        </div>
+        <div class="skill-category">
+          <h4>Databases & Tools</h4>
+          <p>MongoDB Atlas, MySQL, JDBC, Git, GitHub, Postman</p>
+        </div>
+        <div class="skill-category">
+          <h4>Domains</h4>
+          <p>Full-Stack Systems, DSA, OS Process Scheduling, Edge AI</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="chat-toggle-container">
+    <button id="chatToggleBtn" class="chat-toggle-btn" aria-label="Open AI Assistant">
+      <i class="fa-solid fa-comment-dots"></i>
+      <span>Ask AI about Devansh</span>
+    </button>
+  </div>
+
+  <div id="chatModal" class="chat-modal hidden">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <i class="fa-solid fa-robot"></i>
+        <span>Devansh's Assistant</span>
+      </div>
+      <button id="chatCloseBtn" class="chat-close-btn" aria-label="Close Chat">&times;</button>
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+      <div class="message bot">
+        Hi! I'm Devansh's AI assistant. Ask me about his projects, coding profiles, or technical background!
+      </div>
+    </div>
+
+    <form id="chatForm" class="chat-input-bar">
+      <input type="text" id="chatInput" placeholder="Ask about MedVault, skills..." required autocomplete="off" />
+      <button type="submit" id="chatSendBtn" aria-label="Send Message">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
