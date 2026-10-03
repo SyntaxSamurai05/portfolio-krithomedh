@@ -1,73 +1,112 @@
 {
-  "name": "KOMMI VENKATA SAI DEVANSH",
-  "title": "Computer Science Undergraduate & Full-Stack Developer",
-  "location": "Hyderabad, Telangana",
+  "name": "Devansh Kommi",
+  "title": "Computer Science Undergraduate & Full-Stack / Systems Developer",
+  "location": "Hyderabad, Telangana, India",
   "email": "kommidevansh@gmail.com",
-  "github": "https://github.com/SyntaxSamurai05",
-  "linkedin": "https://in.linkedin.com/in/devansh-kommi-82388a380",
-  "leetcode": "https://leetcode.com/u/devanshk14/",
-  "resumeUrl": "/resume.pdf",
+  "github": {
+    "url": "https://github.com/SyntaxSamurai05",
+    "username": "SyntaxSamurai05",
+    "publicRepositoriesCount": "5+ repositories",
+    "primaryProjects": ["MedVault Core", "CPU Scheduling Simulator", "Repo Guardian", "Vehicle Rental System"]
+  },
+  "codingProfiles": {
+    "leetcode": {
+      "url": "https://leetcode.com/u/devanshk14/",
+      "username": "devanshk14",
+      "solvedProblems": "70+ algorithmic problems solved",
+      "focus": "Arrays, Dynamic Programming, Two Pointers, Trees, Graphs"
+    },
+    "codeforces": {
+      "username": "levi_phantom05",
+      "status": "Active competitive coding contestant"
+    }
+  },
+  "resume": {
+    "downloadUrl": "resume.pdf",
+    "description": "Devansh's complete one-page technical resume."
+  },
+  "about": "Devansh Kommi is an engineering undergraduate pursuing a B.Tech in CSE at VNR VJIET and a BS in Data Science at IIT Madras. He focuses on scalable full-stack architectures, low-level OS process management, and offline edge AI deployment.",
   "education": [
     {
       "institution": "VNR Vignana Jyothi Institute of Engineering and Technology (VNR VJIET)",
       "degree": "B.Tech in Computer Science and Engineering",
-      "status": "Expected 2029",
-      "details": "Data Structures & Algorithms, Java OOP, Operating Systems, Database Management Systems"
+      "duration": "2025 - 2029",
+      "keyCoursework": "Data Structures & Algorithms, Object-Oriented Programming (Java), Operating Systems, Database Management Systems"
     },
     {
       "institution": "IIT Madras",
-      "degree": "BS in Data Science & Applications",
-      "status": "Ongoing",
-      "details": "Computational Thinking, Python Programming, Applied Statistics"
+      "degree": "BS in Data Science and Applications",
+      "duration": "Ongoing",
+      "keyCoursework": "Computational Thinking, Python Programming, Applied Statistics & Mathematics"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Team Lead & Technical Contributor (Repo Guardian)",
+      "organization": "iQOO Hackathon City Battle — Team Vortex3",
+      "period": "September 2026",
+      "details": "Engineered an edge AI offline code security reviewer using llama.cpp and quantized GGUF models. Pitched the architecture during the Hyderabad City Battle."
+    },
+    {
+      "role": "IoT Systems Designer",
+      "organization": "Academic Prototype & Design Thinking Initiative",
+      "period": "2026",
+      "details": "Engineered an automated smart benchtop irrigation ecosystem using ESP32, capacitive moisture probes, and electrical safety fail-safes."
     }
   ],
   "skills": {
     "languages": ["Python", "C", "Java", "JavaScript", "SQL"],
-    "frameworks": ["React.js", "Node.js", "Express.js", "Tailwind CSS", "Flask"],
-    "databasesAndTools": ["MongoDB Atlas", "MySQL", "JDBC", "Git", "GitHub", "Vite", "Postman"],
-    "coreDomains": ["Full-Stack Development", "Algorithms & Data Structures", "OS Scheduling", "IoT & Edge AI"]
+    "frameworksAndLibraries": ["Node.js", "Express.js", "Flask", "React", "Tailwind CSS"],
+    "databasesAndTools": ["MongoDB Atlas", "MySQL", "JDBC", "Git", "GitHub", "Postman", "Linux/Bash"],
+    "coreDomains": ["Full-Stack Development", "Data Structures & Algorithms", "OS Process Scheduling", "Edge AI & Quantized Models"]
   },
   "projects": [
     {
       "title": "MedVault Core",
-      "tagline": "Full-Stack Patient Health Record Platform",
-      "tech": ["React", "Vite", "Node.js", "Express", "Tailwind CSS", "WebSockets", "MongoDB"],
+      "tagline": "Patient-Held Health Record & Consent Verification Platform",
+      "tech": ["Node.js", "Express", "WebSockets", "MongoDB", "JavaScript"],
       "highlights": [
-        "Patient-held health record system with real-time consent verification via WebSockets.",
-        "RESTful API endpoints for auth, record storage, and doctor access control logs."
+        "Architected an explicit consent verification pipeline allowing patients to grant temporary doctor access via real-time WebSockets.",
+        "Engineered RESTful endpoints for health record ingestion, doctor audit logs, and medical history retrieval."
       ]
     },
     {
       "title": "CPU Process Scheduling Simulator",
-      "tagline": "Operating System Process Execution Visualizer",
-      "tech": ["C", "Python", "Flask", "HTML5 Canvas"],
+      "tagline": "Operating System Scheduling Algorithm Visualizer",
+      "tech": ["C", "Python", "Flask", "HTML5"],
       "highlights": [
-        "Engineered FCFS, SJF, SRTF, Round Robin, and Priority Scheduling core in C.",
-        "Integrated Flask server generating dynamic execution timelines and Gantt charts."
+        "Implemented high-performance scheduling core in C for FCFS, SJF, SRTF, Priority, and Round Robin algorithms.",
+        "Integrated Flask web backend rendering dynamic execution timelines and Gantt charts with queue metrics."
       ]
     },
     {
       "title": "Repo Guardian",
-      "tagline": "On-Device Code Review System (iQOO Hackathon)",
+      "tagline": "On-Device Offline AI Code Reviewer",
       "tech": ["Python", "llama.cpp", "GGUF Quantization", "Shell"],
       "highlights": [
-        "Built edge-deployable AI code reviewer using quantized local LLMs for private offline analysis.",
-        "Automated static prompt-injection pipelines detecting security anti-patterns."
+        "Enabled private, local-first code vulnerability scanning using lightweight quantized models without transmitting proprietary code off-device.",
+        "Built automated static prompt-injection pipelines detecting security anti-patterns."
       ]
     },
     {
       "title": "Vehicle Rental Management System",
-      "tagline": "Object-Oriented Backend & Fleet Manager",
+      "tagline": "Object-Oriented Backend & Transaction Engine",
       "tech": ["Java", "OOP Principles", "JDBC", "MySQL"],
       "highlights": [
-        "OOP architecture with inheritance, encapsulation, and custom exception handling.",
-        "Direct JDBC connection layer for booking transactions and fleet tracking."
+        "Built modular OOP hierarchy with inheritance, polymorphism, and custom exception handling.",
+        "Implemented direct JDBC queries for booking persistence, vehicle availability tracking, and customer records."
       ]
     }
   ],
   "achievements": [
-    "Active competitive programming on LeetCode and Codeforces.",
-    "Participant at iQOO Hackathon City Battle with Team Vortex3.",
-    "Built an automated IoT benchtop smart irrigation prototype using ESP32."
-  ]
+    "70+ algorithmic challenges solved on LeetCode across arrays, dynamic programming, and graphs.",
+    "Selected as Team Lead for Team Vortex3 at the iQOO Hackathon City Battle.",
+    "Dual-enrolled engineering scholar at VNR VJIET (B.Tech CSE) and IIT Madras (BS Data Science)."
+  ],
+  "contact": {
+    "email": "kommidevansh@gmail.com",
+    "linkedin": "https://in.linkedin.com/in/devansh-kommi-82388a380",
+    "github": "https://github.com/SyntaxSamurai05",
+    "leetcode": "https://leetcode.com/u/devanshk14/"
+  }
 }

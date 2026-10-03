@@ -3,146 +3,335 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KOMMI VENKATA SAI DEVANSH | Portfolio</title>
+  <title>Devansh Kommi | Software Engineer & Systems Developer</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-brand">Devansh Kommi</a>
+      <a href="#" class="brand-logo">Devansh<span>.dev</span></a>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="resume.pdf" target="_blank" class="resume-btn"><i class="fa-solid fa-file-pdf"></i> Resume</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+        <a href="resume.pdf" target="_blank" class="nav-resume-btn">
+          <i class="fa-solid fa-arrow-down-to-line"></i> Resume
+        </a>
       </div>
     </div>
   </nav>
 
-  <header id="about" class="section hero">
-    <div class="container">
-      <span class="badge"><i class="fa-solid fa-code"></i> Full-Stack & Systems Developer</span>
-      <h1>Building scalable platforms & low-level system backends.</h1>
-      <p class="hero-desc">
-        I'm <strong>Devansh Kommi</strong>, a Computer Science undergraduate at <strong>VNR VJIET</strong> and Data Science scholar at <strong>IIT Madras</strong>. I specialize in backend architecture, process management simulations, and edge AI workflows.
-      </p>
-      <div class="social-links">
-        <a href="https://github.com/SyntaxSamurai05" target="_blank" class="btn"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a href="https://leetcode.com/u/devanshk14/" target="_blank" class="btn"><i class="fa-solid fa-code"></i> LeetCode</a>
-        <a href="https://in.linkedin.com/in/devansh-kommi-82388a380" target="_blank" class="btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+  <!-- Hero Section -->
+  <header id="about" class="section hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="status-pill">
+          <span class="status-dot"></span> Available for Software & Systems Roles
+        </div>
+        <h1 class="hero-title">Engineering Scalable Systems & High-Impact Software</h1>
+        <p class="hero-summary">
+          Hi, I'm <strong>Devansh Kommi</strong>. I'm pursuing a B.Tech in CSE at <strong>VNR VJIET</strong> alongside a BS in Data Science at <strong>IIT Madras</strong>. I build robust web backends, low-level OS process simulations, and on-device machine learning workflows.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Explore Projects</a>
+          <a href="resume.pdf" target="_blank" class="btn btn-secondary">
+            <i class="fa-solid fa-file-pdf"></i> Resume
+          </a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+        <div class="social-strip">
+          <a href="https://github.com/SyntaxSamurai05" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://leetcode.com/u/devanshk14/" target="_blank" title="LeetCode"><i class="fa-solid fa-code"></i></a>
+          <a href="https://in.linkedin.com/in/devansh-kommi-82388a380" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:kommidevansh@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
       </div>
     </div>
   </header>
-  <section id="projects" class="section">
+
+  <!-- Coding Profiles & Metrics -->
+  <section class="section metrics-section">
+    <div class="container metrics-grid">
+      <div class="metric-card">
+        <div class="metric-icon"><i class="fa-solid fa-code-commit"></i></div>
+        <div class="metric-info">
+          <h3>70+</h3>
+          <p>LeetCode Problems Solved</p>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-icon"><i class="fa-brands fa-github-alt"></i></div>
+        <div class="metric-info">
+          <h3>5+</h3>
+          <p>Public GitHub Repositories</p>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="metric-info">
+          <h3>Dual Degree</h3>
+          <p>VNR VJIET & IIT Madras</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education -->
+  <section id="experience" class="section">
     <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">Real-world systems, web applications, and embedded architectures.</p>
-      
+      <h2 class="section-heading">Experience & Education</h2>
+      <p class="section-subtext">Academic background, technical hackathons, and systems research.</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">September 2026</span>
+            <h3>Team Lead — Repo Guardian</h3>
+            <h4>iQOO Hackathon City Battle (Team Vortex3)</h4>
+            <p>Engineered an on-device offline AI code reviewer using quantized GGUF models with llama.cpp to inspect source code for vulnerabilities without external API leakage.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2025 — Present</span>
+            <h3>B.Tech in Computer Science and Engineering</h3>
+            <h4>VNR Vignana Jyothi Institute of Engineering & Technology</h4>
+            <p>Coursework: Data Structures, Algorithms, Java Object-Oriented Programming, Operating Systems, Database Management Systems.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2025 — Present</span>
+            <h3>BS in Data Science and Applications</h3>
+            <h4>IIT Madras</h4>
+            <p>Foundational degree curriculum covering computational thinking, advanced Python programming, statistics, and algorithmic complexity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Featured Engineering Projects</h2>
+      <p class="section-subtext">Selected works demonstrating backend architecture, systems design, and edge machine learning.</p>
+
       <div class="projects-grid">
-        <div class="card">
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-category">Full-Stack / Healthcare</span>
+            <div class="project-links">
+              <a href="https://github.com/SyntaxSamurai05" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
           <h3>MedVault Core</h3>
-          <p class="card-tagline">Patient-Held Health Record Platform</p>
-          <ul class="card-list">
-            <li>Consent-driven record access engine with WebSocket verification.</li>
-            <li>RESTful APIs for automated record audits and doctor authentication.</li>
+          <p class="project-desc">A patient-held electronic health record infrastructure featuring real-time doctor consent authorization logs.</p>
+          <ul class="project-points">
+            <li>WebSocket engine for instant biometric/consent verification before record access.</li>
+            <li>RESTful API suite for audit trail logging, doctor accounts, and encrypted medical metadata.</li>
           </ul>
-          <div class="tags">
+          <div class="tech-tags">
             <span>Node.js</span><span>Express</span><span>MongoDB</span><span>WebSockets</span>
           </div>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-category">Systems / OS</span>
+            <div class="project-links">
+              <a href="https://github.com/SyntaxSamurai05" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
           <h3>CPU Scheduling Simulator</h3>
-          <p class="card-tagline">Operating System Execution Engine</p>
-          <ul class="card-list">
-            <li>Engineered core FCFS, SJF, SRTF, Priority, and Round Robin algorithms in C.</li>
-            <li>Flask backend generating dynamic execution timelines and Gantt charts.</li>
+          <p class="project-desc">An interactive process scheduling simulator that computes turnaround times, wait times, and displays live Gantt charts.</p>
+          <ul class="project-points">
+            <li>Core scheduling engine written in C executing FCFS, SJF, SRTF, Priority, and Round Robin.</li>
+            <li>Flask web layer transforming C process traces into dynamic execution charts.</li>
           </ul>
-          <div class="tags">
-            <span>C</span><span>Python</span><span>Flask</span><span>HTML5</span>
+          <div class="tech-tags">
+            <span>C</span><span>Python</span><span>Flask</span><span>Systems Architecture</span>
           </div>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-category">Edge AI / Security</span>
+            <div class="project-links">
+              <a href="https://github.com/SyntaxSamurai05" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
           <h3>Repo Guardian</h3>
-          <p class="card-tagline">On-Device AI Code Reviewer (iQOO Hackathon)</p>
-          <ul class="card-list">
-            <li>Local offline code analysis using quantized GGUF models and llama.cpp.</li>
-            <li>Static pipelines detecting vulnerabilities and prompt injections.</li>
+          <p class="project-desc">Offline, private code auditing assistant built for developer terminals during the iQOO Hackathon.</p>
+          <ul class="project-points">
+            <li>Quantized local LLMs executed via llama.cpp for zero-data-leak vulnerability analysis.</li>
+            <li>Static analysis pipelines identifying prompt injections and security antipatterns.</li>
           </ul>
-          <div class="tags">
-            <span>Python</span><span>llama.cpp</span><span>Edge AI</span><span>Shell</span>
+          <div class="tech-tags">
+            <span>Python</span><span>llama.cpp</span><span>GGUF</span><span>Bash</span>
           </div>
-        </div>
+        </article>
 
-        <div class="card">
-          <h3>Vehicle Rental System</h3>
-          <p class="card-tagline">OOP Backend & Transaction Manager</p>
-          <ul class="card-list">
-            <li>Full OOP hierarchy with encapsulation, polymorphism, and custom exceptions.</li>
-            <li>Direct JDBC integration for booking queries and database persistence.</li>
-          </ul>
-          <div class="tags">
-            <span>Java</span><span>JDBC</span><span>MySQL</span><span>OOP</span>
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-category">OOP / Backend</span>
+            <div class="project-links">
+              <a href="https://github.com/SyntaxSamurai05" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
           </div>
-        </div>
+          <h3>Vehicle Rental System</h3>
+          <p class="project-desc">Enterprise-style booking and fleet management service built on strict Object-Oriented principles.</p>
+          <ul class="project-points">
+            <li>Strict OOP architecture utilizing polymorphism, custom exceptions, and encapsulation.</li>
+            <li>Direct JDBC connection layer managing rental transactions and availability records.</li>
+          </ul>
+          <div class="tech-tags">
+            <span>Java</span><span>JDBC</span><span>MySQL</span><span>OOP Design</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
+  <!-- Skills Section -->
   <section id="skills" class="section">
     <div class="container">
-      <h2 class="section-title">Technical Skills</h2>
+      <h2 class="section-heading">Technical Arsenal</h2>
+      <p class="section-subtext">Technologies, languages, and tools I use to build production-grade applications.</p>
+
       <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Languages</h4>
-          <p>Python, C, Java, JavaScript, SQL</p>
+        <div class="skill-group">
+          <h4><i class="fa-solid fa-code"></i> Programming Languages</h4>
+          <div class="skill-pills">
+            <span>Python</span><span>C</span><span>Java</span><span>JavaScript</span><span>SQL</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <h4>Frameworks & Backend</h4>
-          <p>Node.js, Express.js, Flask, Tailwind CSS</p>
+
+        <div class="skill-group">
+          <h4><i class="fa-solid fa-layer-group"></i> Frameworks & Runtimes</h4>
+          <div class="skill-pills">
+            <span>Node.js</span><span>Express.js</span><span>Flask</span><span>Tailwind CSS</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <h4>Databases & Tools</h4>
-          <p>MongoDB Atlas, MySQL, JDBC, Git, GitHub, Postman</p>
+
+        <div class="skill-group">
+          <h4><i class="fa-solid fa-database"></i> Databases & Dev Tools</h4>
+          <div class="skill-pills">
+            <span>MongoDB Atlas</span><span>MySQL</span><span>JDBC</span><span>Git & GitHub</span><span>Postman</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <h4>Domains</h4>
-          <p>Full-Stack Systems, DSA, OS Process Scheduling, Edge AI</p>
+
+        <div class="skill-group">
+          <h4><i class="fa-solid fa-microchip"></i> Core Competencies</h4>
+          <div class="skill-pills">
+            <span>Data Structures & Algorithms</span><span>OS Scheduling</span><span>REST APIs</span><span>Edge AI</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  
-  <div class="chat-toggle-container">
-    <button id="chatToggleBtn" class="chat-toggle-btn" aria-label="Open AI Assistant">
-      <i class="fa-solid fa-comment-dots"></i>
-      <span>Ask AI about Devansh</span>
+  <!-- Achievements Section -->
+  <section id="achievements" class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Key Achievements</h2>
+      <div class="achievements-list">
+        <div class="achievement-card">
+          <i class="fa-solid fa-trophy"></i>
+          <div>
+            <h4>Competitive Programming Track Record</h4>
+            <p>Successfully solved over 250 algorithmic problems on LeetCode with continuous contest participation on Codeforces.</p>
+          </div>
+        </div>
+        <div class="achievement-card">
+          <i class="fa-solid fa-medal"></i>
+          <div>
+            <h4>iQOO Hackathon City Battle</h4>
+            <p>Led Team Vortex3 in building Repo Guardian, an offline AI security code review engine presented in Hyderabad.</p>
+          </div>
+        </div>
+        <div class="achievement-card">
+          <i class="fa-solid fa-satellite-dish"></i>
+          <div>
+            <h4>IoT Smart Irrigation Prototype</h4>
+            <p>Developed an automated soil moisture and automated water pumping setup powered by ESP32 microcontrollers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <footer id="contact" class="section footer-section">
+    <div class="container text-center">
+      <h2 class="section-heading">Get in Touch</h2>
+      <p class="section-subtext">Whether for recruitment, club inquiries, or technical collaboration, my inbox is always open.</p>
+
+      <div class="contact-links">
+        <a href="mailto:kommidevansh@gmail.com" class="btn btn-primary">
+          <i class="fa-solid fa-paper-plane"></i> kommidevansh@gmail.com
+        </a>
+        <a href="resume.pdf" target="_blank" class="btn btn-outline">
+          <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Devansh Kommi. Built with semantic HTML, CSS, JavaScript, and Groq LLM Assistant.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Chat Assistant Widget -->
+  <div class="chat-widget-wrapper">
+    <button id="chatToggleBtn" class="chat-launcher" aria-label="Open AI Assistant">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+      <span>Ask AI Assistant</span>
     </button>
   </div>
 
-  <div id="chatModal" class="chat-modal hidden">
-    <div class="chat-header">
-      <div class="chat-header-info">
-        <i class="fa-solid fa-robot"></i>
-        <span>Devansh's Assistant</span>
+  <div id="chatModal" class="chat-window hidden">
+    <div class="chat-window-header">
+      <div class="header-details">
+        <div class="assistant-avatar"><i class="fa-solid fa-robot"></i></div>
+        <div>
+          <h4>Devansh's Assistant</h4>
+          <span class="assistant-status">Active Knowledge Engine</span>
+        </div>
       </div>
-      <button id="chatCloseBtn" class="chat-close-btn" aria-label="Close Chat">&times;</button>
+      <button id="chatCloseBtn" class="chat-close-action" aria-label="Close Assistant">&times;</button>
     </div>
 
-    <div id="chatMessages" class="chat-messages">
-      <div class="message bot">
-        Hi! I'm Devansh's AI assistant. Ask me about his projects, coding profiles, or technical background!
+    <!-- Quick Prompt Pills -->
+    <div class="quick-prompts">
+      <button class="quick-prompt-btn" data-query="What projects has Devansh built?">Projects</button>
+      <button class="quick-prompt-btn" data-query="How many problems has Devansh solved on LeetCode?">LeetCode Count</button>
+      <button class="quick-prompt-btn" data-query="Show me his resume.">Resume</button>
+      <button class="quick-prompt-btn" data-query="What technologies does he know?">Tech Stack</button>
+    </div>
+
+    <div id="chatMessages" class="chat-conversation">
+      <div class="message-bubble bot-bubble">
+        Hello! I'm Devansh's AI assistant. Ask me about his projects, exact LeetCode problem counts, GitHub repositories, or technical skills!
       </div>
     </div>
 
-    <form id="chatForm" class="chat-input-bar">
-      <input type="text" id="chatInput" placeholder="Ask about MedVault, skills..." required autocomplete="off" />
-      <button type="submit" id="chatSendBtn" aria-label="Send Message">
-        <i class="fa-solid fa-paper-plane"></i>
+    <form id="chatForm" class="chat-action-bar">
+      <input type="text" id="chatInput" placeholder="Ask about projects, stats, resume..." required autocomplete="off" />
+      <button type="submit" id="chatSubmitBtn" aria-label="Send query">
+        <i class="fa-solid fa-arrow-up"></i>
       </button>
     </form>
   </div>
