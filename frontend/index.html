@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Devansh Kommi | Software Engineer & Systems Developer</title>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="layout.css" />
+  <link rel="stylesheet" href="chatbot.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="brand-logo">Devansh<span>.dev</span></a>
+      <a href="#" class="brand-logo">Devansh's<span> Portfolio</span></a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -24,20 +25,24 @@
         <a href="resume.pdf" target="_blank" class="nav-resume-btn">
           <i class="fa-solid fa-arrow-down-to-line"></i> Resume
         </a>
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <i id="themeIcon" class="fa-solid fa-moon"></i>
+        </button>
       </div>
     </div>
   </nav>
-
-  <!-- Hero Section -->
+  
   <header id="about" class="section hero-section">
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="status-pill">
           <span class="status-dot"></span> Available for Software & Systems Roles
         </div>
-        <h1 class="hero-title">Engineering Scalable Systems & High-Impact Software</h1>
+        <h1 class="hero-title">
+          Writing Purposeful Code. Building <span class="gradient-text">Scalable Projects</span>.
+        </h1>
         <p class="hero-summary">
-          Hi, I'm <strong>Devansh Kommi</strong>. I'm pursuing a B.Tech in CSE at <strong>VNR VJIET</strong> alongside a BS in Data Science at <strong>IIT Madras</strong>. I build robust web backends, low-level OS process simulations, and on-device machine learning workflows.
+          Hi, I'm <strong>KOMMI VENKATA SAI DEVANSH</strong>. I'm pursuing a B.Tech in CSE at <strong>VNR VJIET</strong> alongside a BS in Data Science at <strong>IIT Madras</strong>. I specialize in distributed full-stack platforms, low-level OS process management simulations, and offline edge AI workflows.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Explore Projects</a>
@@ -56,7 +61,6 @@
     </div>
   </header>
 
-  <!-- Coding Profiles & Metrics -->
   <section class="section metrics-section">
     <div class="container metrics-grid">
       <div class="metric-card">
@@ -83,11 +87,10 @@
     </div>
   </section>
 
-  <!-- Experience & Education -->
   <section id="experience" class="section">
     <div class="container">
       <h2 class="section-heading">Experience & Education</h2>
-      <p class="section-subtext">Academic background, technical hackathons, and systems research.</p>
+      <p class="section-subtext">Academic foundation, technical hackathons, and systems research.</p>
 
       <div class="timeline">
         <div class="timeline-item">
@@ -106,7 +109,7 @@
             <span class="timeline-date">2025 — Present</span>
             <h3>B.Tech in Computer Science and Engineering</h3>
             <h4>VNR Vignana Jyothi Institute of Engineering & Technology</h4>
-            <p>Coursework: Data Structures, Algorithms, Java Object-Oriented Programming, Operating Systems, Database Management Systems.</p>
+            <p>Coursework: Data Structures & Algorithms, Java OOP, Operating Systems, Database Management Systems.</p>
           </div>
         </div>
 
@@ -123,7 +126,7 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  
   <section id="projects" class="section section-alt">
     <div class="container">
       <h2 class="section-heading">Featured Engineering Projects</h2>
@@ -205,7 +208,6 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills" class="section">
     <div class="container">
       <h2 class="section-heading">Technical Arsenal</h2>
@@ -243,7 +245,6 @@
     </div>
   </section>
 
-  <!-- Achievements Section -->
   <section id="achievements" class="section section-alt">
     <div class="container">
       <h2 class="section-heading">Key Achievements</h2>
@@ -273,7 +274,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <footer id="contact" class="section footer-section">
     <div class="container text-center">
       <h2 class="section-heading">Get in Touch</h2>
@@ -294,7 +294,6 @@
     </div>
   </footer>
 
-  <!-- Floating Chat Assistant Widget -->
   <div class="chat-widget-wrapper">
     <button id="chatToggleBtn" class="chat-launcher" aria-label="Open AI Assistant">
       <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -314,7 +313,6 @@
       <button id="chatCloseBtn" class="chat-close-action" aria-label="Close Assistant">&times;</button>
     </div>
 
-    <!-- Quick Prompt Pills -->
     <div class="quick-prompts">
       <button class="quick-prompt-btn" data-query="What projects has Devansh built?">Projects</button>
       <button class="quick-prompt-btn" data-query="How many problems has Devansh solved on LeetCode?">LeetCode Count</button>

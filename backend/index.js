@@ -10,7 +10,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 1. Read profile knowledge base
 let profileData = {};
 try {
   const rawData = fs.readFileSync('./profileData.json', 'utf-8');
@@ -19,28 +18,46 @@ try {
   console.error('Error loading profileData.json:', err);
 }
 
-// 2. Initialize Groq Client
+async function getLiveLeetCodeStats(username = 'devanshk14') {
+  try {
+    const query = `
+      query userProblemsSolved($username: String!) {
+        matchedUser(username: $username) {
+          submitStatsGlobal {
+            acSubmissionNum {
+              difficulty
+              count
+            }
+          }
+        }
+      }
+    `;
+
+    const res = await fetch('https://leetcode.com/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Referer': 'https://leetcode.com'
+      },
+      body: JSON.stringify({ query, variables: { username } })
+    });
+
+    const data = await res.json();
+    const stats = data?.data?.matchedUser?.submitStatsGlobal?.acSubmissionNum;
+    if (!stats) return null;
+
+    const total = stats.find(s => s.difficulty === 'All')?.count || 0;
+    const easy = stats.find(s => s.difficulty === 'Easy')?.count || 0;
+    const medium = stats.find(s => s.difficulty === 'Medium')?.count || 0;
+    const hard = stats.find(s => s.difficulty === 'Hard')?.count || 0;
+
+    return `${total} total solved (${easy} Easy, ${medium} Medium, ${hard} Hard)`;
+  } catch (err) {
+    console.error('Failed to fetch live LeetCode stats:', err.message);
+    return null;
+  }
+}
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-
-const systemPrompt = `
-You are the AI portfolio assistant for Devansh Kommi.
-Answer visitor questions about Devansh's projects, skills, education, experience, coding profiles, and resume concisely, accurately, and professionally.
-
-Devansh's Profile Knowledge:
-${JSON.stringify(profileData, null, 2)}
-
-Strict Guidelines:
-1. Ground answers strictly in the knowledge base provided above.
-2. If asked about his resume, provide this markdown link: "[Download Resume](/resume.pdf)".
-3. If asked about his GitHub or coding profiles, provide:
-   - GitHub: ${profileData.github || 'https://github.com/SyntaxSamurai05'}
-   - LeetCode: ${profileData.leetcode || 'https://leetcode.com/u/devanshk14/'}
-   - LinkedIn: ${profileData.linkedin || ''}
-4. If a question is irrelevant to Devansh, politely reply: "I can only answer questions about Devansh's technical background, projects, and skills."
-5. Keep answers concise with bullet points where helpful.
-`;
-
-// 3. Chat Endpoint
 app.post('/api/chat', async (req, res) => {
   try {
     const { message, history } = req.body;
@@ -49,9 +66,34 @@ app.post('/api/chat', async (req, res) => {
       return res.status(400).json({ error: 'Valid message string is required.' });
     }
 
+    const liveLeetCode = await getLiveLeetCodeStats('devanshk14');
+    const leetCodeInfo = liveLeetCode || profileData.codingProfiles.leetcode.solvedProblems;
+
+    const systemPrompt = `
+You are KOMMI VENKATA SAI DEVANSH's personal AI portfolio assistant.
+Your goal is to answer visitor questions directly, clearly, concisely, and professionally.
+
+Devansh's Information:
+${JSON.stringify(profileData, null, 2)}
+
+Strict Response Rules:
+1. Speak in simple, clear, conversational English.
+2. DO NOT ramble, repeat yourself, or generate filler introductions.
+3. For greetings ("hi", "hello", "who are you"):
+   - Say: "Hello! I'm Devansh's AI assistant. Ask me about his engineering projects, technical stack, LeetCode stats, or resume!"
+4. For LeetCode questions:
+   - State the exact stats: "${leetCodeInfo}".
+   - Provide the direct link: [LeetCode Profile](${profileData.codingProfiles.leetcode.url}).
+5. For GitHub / projects:
+   - Name the project, state 1-2 sentence description, and list the stack.
+6. For Resume:
+   - Provide: "[Download Resume](resume.pdf)".
+7. Format with clean bullet points and short paragraphs. Avoid dense walls of text.
+`;
+
     const messages = [
       { role: 'system', content: systemPrompt },
-      ...(history || []).map((entry) => ({
+      ...(history || []).slice(-6).map((entry) => ({
         role: entry.sender === 'user' ? 'user' : 'assistant',
         content: entry.text,
       })),
@@ -60,8 +102,8 @@ app.post('/api/chat', async (req, res) => {
 
     const chatCompletion = await groq.chat.completions.create({
       messages: messages,
-      model: 'openai/gpt-oss-20b',
-      temperature: 0.3,
+      model: 'qwen/qwen3.8-27b',
+      temperature: 0.2,
       max_tokens: 300,
     });
 
@@ -70,7 +112,7 @@ app.post('/api/chat', async (req, res) => {
   } catch (error) {
     console.error('API Error:', error);
     res.status(500).json({
-      reply: "I'm having trouble processing that right now. You can view Devansh's resume directly at /resume.pdf.",
+      reply: "I'm having trouble processing that right now. You can view Devansh's resume directly at [Download Resume](resume.pdf)."
     });
   }
 });
