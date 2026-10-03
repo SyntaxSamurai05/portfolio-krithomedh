@@ -1,0 +1,73 @@
+{
+  "name": "KOMMI VENKATA SAI DEVANSH",
+  "title": "Computer Science Undergraduate & Full-Stack Developer",
+  "location": "Hyderabad, Telangana",
+  "email": "kommidevansh@gmail.com",
+  "github": "https://github.com/SyntaxSamurai05",
+  "linkedin": "https://in.linkedin.com/in/devansh-kommi-82388a380",
+  "leetcode": "https://leetcode.com/u/devanshk14/",
+  "resumeUrl": "/resume.pdf",
+  "education": [
+    {
+      "institution": "VNR Vignana Jyothi Institute of Engineering and Technology (VNR VJIET)",
+      "degree": "B.Tech in Computer Science and Engineering",
+      "status": "Expected 2029",
+      "details": "Data Structures & Algorithms, Java OOP, Operating Systems, Database Management Systems"
+    },
+    {
+      "institution": "IIT Madras",
+      "degree": "BS in Data Science & Applications",
+      "status": "Ongoing",
+      "details": "Computational Thinking, Python Programming, Applied Statistics"
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "C", "Java", "JavaScript", "SQL"],
+    "frameworks": ["React.js", "Node.js", "Express.js", "Tailwind CSS", "Flask"],
+    "databasesAndTools": ["MongoDB Atlas", "MySQL", "JDBC", "Git", "GitHub", "Vite", "Postman"],
+    "coreDomains": ["Full-Stack Development", "Algorithms & Data Structures", "OS Scheduling", "IoT & Edge AI"]
+  },
+  "projects": [
+    {
+      "title": "MedVault Core",
+      "tagline": "Full-Stack Patient Health Record Platform",
+      "tech": ["React", "Vite", "Node.js", "Express", "Tailwind CSS", "WebSockets", "MongoDB"],
+      "highlights": [
+        "Patient-held health record system with real-time consent verification via WebSockets.",
+        "RESTful API endpoints for auth, record storage, and doctor access control logs."
+      ]
+    },
+    {
+      "title": "CPU Process Scheduling Simulator",
+      "tagline": "Operating System Process Execution Visualizer",
+      "tech": ["C", "Python", "Flask", "HTML5 Canvas"],
+      "highlights": [
+        "Engineered FCFS, SJF, SRTF, Round Robin, and Priority Scheduling core in C.",
+        "Integrated Flask server generating dynamic execution timelines and Gantt charts."
+      ]
+    },
+    {
+      "title": "Repo Guardian",
+      "tagline": "On-Device Code Review System (iQOO Hackathon)",
+      "tech": ["Python", "llama.cpp", "GGUF Quantization", "Shell"],
+      "highlights": [
+        "Built edge-deployable AI code reviewer using quantized local LLMs for private offline analysis.",
+        "Automated static prompt-injection pipelines detecting security anti-patterns."
+      ]
+    },
+    {
+      "title": "Vehicle Rental Management System",
+      "tagline": "Object-Oriented Backend & Fleet Manager",
+      "tech": ["Java", "OOP Principles", "JDBC", "MySQL"],
+      "highlights": [
+        "OOP architecture with inheritance, encapsulation, and custom exception handling.",
+        "Direct JDBC connection layer for booking transactions and fleet tracking."
+      ]
+    }
+  ],
+  "achievements": [
+    "Active competitive programming on LeetCode and Codeforces.",
+    "Participant at iQOO Hackathon City Battle with Team Vortex3.",
+    "Built an automated IoT benchtop smart irrigation prototype using ESP32."
+  ]
+}
