@@ -9,6 +9,8 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// 1. Read profile knowledge base
 let profileData = {};
 try {
   const rawData = fs.readFileSync('./profileData.json', 'utf-8');
@@ -16,6 +18,8 @@ try {
 } catch (err) {
   console.error('Error loading profileData.json:', err);
 }
+
+// 2. Fetch live LeetCode stats via GraphQL with fallback to local profileData
 async function getLiveLeetCodeStats(username = 'devanshk14') {
   try {
     const query = `
@@ -51,11 +55,14 @@ async function getLiveLeetCodeStats(username = 'devanshk14') {
 
     return `${total} total solved (${easy} Easy, ${medium} Medium, ${hard} Hard)`;
   } catch (err) {
-    console.error('Failed to fetch live LeetCode stats:', err.message);
     return null;
   }
 }
+
+// 3. Initialize Groq SDK
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
+// 4. Chat Endpoint
 app.post('/api/chat', async (req, res) => {
   try {
     const { message, history } = req.body;
@@ -68,24 +75,25 @@ app.post('/api/chat', async (req, res) => {
     const leetCodeInfo = liveLeetCode || profileData.codingProfiles.leetcode.solvedProblems;
 
     const systemPrompt = `
-You are the personal AI portfolio assistant for Devansh Kommi.
+You are the personal AI portfolio assistant for KOMMI VENKATA SAI DEVANSH.
 Your goal is to answer visitor questions directly, clearly, concisely, and professionally.
 
-Devansh's Profile Knowledge:
+Knowledge Base:
 ${JSON.stringify(profileData, null, 2)}
 
 Strict Response Rules:
-1. Speak in clean, conversational English without internal thought leaks or meta-announcements.
+1. Speak in clean, professional English without internal monologue leaks or meta-announcements.
 2. For greetings ("hi", "hello", "who are you"):
-   - Greet politely and state that you are Devansh's portfolio assistant ready to answer questions regarding his software projects, coding stats, tech stack, or resume.
+   - Greet politely and state that you are the portfolio assistant for KOMMI VENKATA SAI DEVANSH, ready to discuss his software projects, coding statistics, or resume.
 3. For LeetCode questions:
-   - State the exact stats: "${leetCodeInfo}".
+   - State the problem count: "${leetCodeInfo}".
    - Provide direct link: [LeetCode Profile](${profileData.codingProfiles.leetcode.url}).
 4. For GitHub / projects:
-   - Provide clear, direct summaries of MedVault Core, CPU Process Scheduling Simulator, Repo Guardian, or Vehicle Rental System with their associated tech stacks.
+   - Mention he has ${profileData.github.publicRepositoriesCount}.
+   - Provide clear, direct summaries of MedVault Core, CPU Process Scheduling Simulator, Repo Guardian, or Vehicle Rental System.
 5. For Resume:
    - Output: "[Download Resume](resume.pdf)".
-6. Structure responses with short paragraphs and bullet points. Avoid dense walls of text.
+6. Keep answers formatted with short paragraphs or bullet points. Avoid dense walls of text.
 `;
 
     const messages = [
@@ -109,7 +117,7 @@ Strict Response Rules:
   } catch (error) {
     console.error('API Error:', error);
     res.status(500).json({
-      reply: "I'm having trouble processing that right now. You can view Devansh's resume directly at [Download Resume](resume.pdf)."
+      reply: "I'm having trouble processing that right now. You can view his resume directly at [Download Resume](resume.pdf)."
     });
   }
 });

@@ -3,22 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Devansh Kommi | Software Engineer & Systems Developer</title>
+  <title>KOMMI VENKATA SAI DEVANSH | Software Engineer & Systems Developer</title>
+
+  <!-- Professional Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Modular CSS Architecture -->
   <link rel="stylesheet" href="variables.css" />
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="layout.css" />
   <link rel="stylesheet" href="chatbot.css" />
+
+  <!-- Icons & Markdown Parser -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="brand-logo">Devansh<span>.dev</span></a>
+      <a href="#" class="brand-logo">DEVANSH<span>.dev</span></a>
       <div class="nav-links">
         <a href="#about" class="nav-item">About</a>
         <a href="#experience" class="nav-item">Experience</a>
@@ -26,9 +33,6 @@
         <a href="#skills" class="nav-item">Skills</a>
         <a href="#achievements" class="nav-item">Achievements</a>
         <a href="#contact" class="nav-item">Contact</a>
-        <button id="terminalToggleBtn" class="terminal-nav-btn" title="Toggle Developer Terminal (` or Ctrl+~)">
-          <i class="fa-solid fa-terminal"></i> Terminal
-        </button>
         <a href="resume.pdf" target="_blank" class="nav-resume-btn">
           <i class="fa-solid fa-arrow-down-to-line"></i> Resume
         </a>
@@ -37,32 +41,11 @@
         </button>
       </div>
     </div>
-    
+    <!-- Scroll Progress Indicator -->
     <div id="scrollProgressBar" class="scroll-progress-bar"></div>
   </nav>
 
-  
-  <div id="terminalDrawer" class="terminal-drawer hidden">
-    <div class="terminal-bar">
-      <div class="terminal-dots">
-        <span class="dot dot-red" id="terminalCloseDot"></span>
-        <span class="dot dot-yellow"></span>
-        <span class="dot dot-green"></span>
-      </div>
-      <span class="terminal-title">devansh@vjiethub:~ (bash)</span>
-      <span class="terminal-hint">Press ` or ESC to close</span>
-    </div>
-    <div id="terminalOutput" class="terminal-output">
-      <p class="term-greeting">Devansh's Interactive Portfolio Shell v1.0.0</p>
-      <p class="term-dim">Type <span class="term-highlight">help</span> for a list of available commands.</p>
-    </div>
-    <div class="terminal-input-row">
-      <span class="term-prompt">guest@devansh:~$</span>
-      <input type="text" id="terminalInput" autocomplete="off" spellcheck="false" />
-    </div>
-  </div>
-
-
+  <!-- Hero Section -->
   <header id="about" class="section hero-section">
     <div class="container hero-grid">
       <div class="hero-content">
@@ -73,7 +56,7 @@
           Writing Clean Code. Shipping <span class="gradient-text">High-Impact Projects</span>.
         </h1>
         <p class="hero-summary">
-          Hi, I'm <strong>Devansh Kommi</strong>. I'm pursuing a B.Tech in CSE at <strong>VNR VJIET</strong> alongside a BS in Data Science at <strong>IIT Madras</strong>. I specialize in distributed full-stack platforms, low-level OS process management simulations, and offline edge AI workflows.
+          Hi, I'm <strong>KOMMI VENKATA SAI DEVANSH</strong>. I'm pursuing a B.Tech in CSE at <strong>VNR VJIET</strong> alongside a BS in Data Science at <strong>IIT Madras</strong>. I specialize in distributed full-stack platforms, low-level OS process management simulations, and offline edge AI workflows.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Explore Projects</a>
@@ -92,20 +75,20 @@
     </div>
   </header>
 
-  
+  <!-- Coding Profiles & Metrics -->
   <section class="section metrics-section">
     <div class="container metrics-grid">
       <div class="metric-card reveal">
         <div class="metric-icon"><i class="fa-solid fa-code-commit"></i></div>
         <div class="metric-info">
-          <h3>250+</h3>
+          <h3>80+</h3>
           <p>LeetCode Problems Solved</p>
         </div>
       </div>
       <div class="metric-card reveal">
         <div class="metric-icon"><i class="fa-brands fa-github-alt"></i></div>
         <div class="metric-info">
-          <h3>12+</h3>
+          <h3>6+</h3>
           <p>Public GitHub Repositories</p>
         </div>
       </div>
@@ -119,7 +102,7 @@
     </div>
   </section>
 
-  
+  <!-- Experience & Education -->
   <section id="experience" class="section">
     <div class="container">
       <h2 class="section-heading">Experience & Education</h2>
@@ -159,7 +142,7 @@
     </div>
   </section>
 
-  
+  <!-- Projects Section with Filter & Snippet Drawers -->
   <section id="projects" class="section section-alt">
     <div class="container">
       <div class="projects-header-row">
@@ -214,12 +197,12 @@ io.on('connection', (socket) => {
           </div>
         </article>
 
-        
+        <!-- CPU Scheduler -->
         <article class="project-card reveal" data-category="systems">
           <div class="project-top">
             <span class="project-category">Systems / OS</span>
             <div class="project-card-actions">
-              <button class="project-ai-btn" data-ask="How does Devansh's CPU scheduling simulator in C handle Round Robin and preemptive scheduling?" title="Ask AI about this project">
+              <button class="project-ai-btn" data-ask="How does the CPU scheduling simulator in C handle Round Robin and preemptive scheduling?" title="Ask AI about this project">
                 <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI
               </button>
               <a href="https://github.com/SyntaxSamurai05" target="_blank" title="Source Code"><i class="fa-brands fa-github"></i></a>
@@ -252,12 +235,12 @@ while (completed < total_processes) {
           </div>
         </article>
 
-  
+        <!-- Repo Guardian -->
         <article class="project-card reveal" data-category="ai">
           <div class="project-top">
             <span class="project-category">Edge AI / Security</span>
             <div class="project-card-actions">
-              <button class="project-ai-btn" data-ask="What was the iQOO Hackathon project Repo Guardian and how did Devansh run it locally with llama.cpp?" title="Ask AI about this project">
+              <button class="project-ai-btn" data-ask="What was the iQOO Hackathon project Repo Guardian and how was it run locally with llama.cpp?" title="Ask AI about this project">
                 <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI
               </button>
               <a href="https://github.com/SyntaxSamurai05" target="_blank" title="Source Code"><i class="fa-brands fa-github"></i></a>
@@ -284,11 +267,12 @@ while (completed < total_processes) {
           </div>
         </article>
 
+        <!-- Vehicle Rental -->
         <article class="project-card reveal" data-category="java">
           <div class="project-top">
             <span class="project-category">OOP / Backend</span>
             <div class="project-card-actions">
-              <button class="project-ai-btn" data-ask="How is OOP and JDBC structured in Devansh's Vehicle Rental Management System?" title="Ask AI about this project">
+              <button class="project-ai-btn" data-ask="How is OOP and JDBC structured in the Vehicle Rental Management System?" title="Ask AI about this project">
                 <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI
               </button>
               <a href="https://github.com/SyntaxSamurai05" target="_blank" title="Source Code"><i class="fa-brands fa-github"></i></a>
@@ -323,6 +307,7 @@ try (Connection conn = DatabaseConnection.getConnection()) {
     </div>
   </section>
 
+  <!-- Skills Section -->
   <section id="skills" class="section">
     <div class="container">
       <h2 class="section-heading">Technical Arsenal</h2>
@@ -360,6 +345,7 @@ try (Connection conn = DatabaseConnection.getConnection()) {
     </div>
   </section>
 
+  <!-- Achievements Section -->
   <section id="achievements" class="section section-alt">
     <div class="container">
       <h2 class="section-heading">Key Achievements</h2>
@@ -368,7 +354,7 @@ try (Connection conn = DatabaseConnection.getConnection()) {
           <i class="fa-solid fa-trophy"></i>
           <div>
             <h4>Competitive Programming Track Record</h4>
-            <p>Successfully solved over 250 algorithmic problems on LeetCode with continuous contest participation on Codeforces.</p>
+            <p>Successfully solved over 80 algorithmic problems on LeetCode with continuous contest participation on Codeforces.</p>
           </div>
         </div>
         <div class="achievement-card reveal">
@@ -389,6 +375,7 @@ try (Connection conn = DatabaseConnection.getConnection()) {
     </div>
   </section>
 
+  <!-- Contact Section -->
   <footer id="contact" class="section footer-section">
     <div class="container text-center">
       <h2 class="section-heading">Get in Touch</h2>
@@ -404,11 +391,12 @@ try (Connection conn = DatabaseConnection.getConnection()) {
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 Devansh Kommi. Built with semantic HTML, CSS, JavaScript, and Groq LLM Assistant.</p>
+        <p>© 2026 KOMMI VENKATA SAI DEVANSH. Built with semantic HTML, CSS, JavaScript, and Groq LLM Assistant.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Floating Chat Assistant Widget -->
   <div class="chat-widget-wrapper">
     <button id="chatToggleBtn" class="chat-launcher" aria-label="Open AI Assistant">
       <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -437,7 +425,7 @@ try (Connection conn = DatabaseConnection.getConnection()) {
 
     <div id="chatMessages" class="chat-conversation">
       <div class="message-bubble bot-bubble">
-        Hello! I'm Devansh's AI assistant. Ask me about his projects, exact LeetCode problem counts, GitHub repositories, or technical skills!
+        Hello! I'm the portfolio assistant for KOMMI VENKATA SAI DEVANSH. Ask me about his projects, LeetCode stats, repositories, or skills!
       </div>
     </div>
 

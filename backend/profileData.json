@@ -1,19 +1,19 @@
 {
-  "name": "Devansh Kommi",
+  "name": "KOMMI VENKATA SAI DEVANSH",
   "title": "Computer Science Undergraduate & Full-Stack / Systems Developer",
   "location": "Hyderabad, Telangana, India",
   "email": "kommidevansh@gmail.com",
   "github": {
     "url": "https://github.com/SyntaxSamurai05",
     "username": "SyntaxSamurai05",
-    "publicRepositoriesCount": "12+ repositories",
+    "publicRepositoriesCount": "6+ repositories",
     "primaryProjects": ["MedVault Core", "CPU Scheduling Simulator", "Repo Guardian", "Vehicle Rental System"]
   },
   "codingProfiles": {
     "leetcode": {
       "url": "https://leetcode.com/u/devanshk14/",
       "username": "devanshk14",
-      "solvedProblems": "250+ algorithmic problems solved",
+      "solvedProblems": "80+ algorithmic problems solved",
       "focus": "Arrays, Dynamic Programming, Two Pointers, Trees, Graphs"
     },
     "codeforces": {
@@ -26,7 +26,7 @@
     "downloadUrl": "resume.pdf",
     "description": "Devansh's complete one-page technical resume."
   },
-  "about": "Devansh Kommi is an engineering undergraduate pursuing a B.Tech in CSE at VNR VJIET and a BS in Data Science at IIT Madras. He focuses on scalable full-stack architectures, low-level OS process management, and offline edge AI deployment.",
+  "about": "KOMMI VENKATA SAI DEVANSH is an engineering undergraduate pursuing a B.Tech in CSE at VNR VJIET and a BS in Data Science at IIT Madras. He focuses on scalable full-stack architectures, low-level OS process management, and offline edge AI deployment.",
   "education": [
     {
       "institution": "VNR Vignana Jyothi Institute of Engineering and Technology (VNR VJIET)",
@@ -100,7 +100,7 @@
     }
   ],
   "achievements": [
-    "250+ algorithmic challenges solved on LeetCode across arrays, dynamic programming, and graphs.",
+    "80+ algorithmic challenges solved on LeetCode across arrays, dynamic programming, and graphs.",
     "Selected as Team Lead for Team Vortex3 at the iQOO Hackathon City Battle.",
     "Dual-enrolled engineering scholar at VNR VJIET (B.Tech CSE) and IIT Madras (BS Data Science)."
   ],
