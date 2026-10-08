@@ -30,7 +30,6 @@ code, pre, .tech-tags span, .term-prompt, .terminal-output, .terminal-input-row 
   text-align: center;
 }
 
-/* Scroll Reveal Animation Classes */
 .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -43,7 +42,7 @@ code, pre, .tech-tags span, .term-prompt, .terminal-output, .terminal-input-row 
   transform: translateY(0);
 }
 
-/* Scroll Progress Bar */
+
 .scroll-progress-bar {
   position: absolute;
   bottom: 0;
@@ -54,7 +53,6 @@ code, pre, .tech-tags span, .term-prompt, .terminal-output, .terminal-input-row 
   transition: width 0.1s linear;
 }
 
-/* Navbar */
 .navbar {
   position: sticky;
   top: 0;

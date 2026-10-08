@@ -9,8 +9,6 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-// 1. Read profile knowledge base
 let profileData = {};
 try {
   const rawData = fs.readFileSync('./profileData.json', 'utf-8');
@@ -18,8 +16,6 @@ try {
 } catch (err) {
   console.error('Error loading profileData.json:', err);
 }
-
-// 2. Fetch live LeetCode stats via GraphQL
 async function getLiveLeetCodeStats(username = 'devanshk14') {
   try {
     const query = `
@@ -59,11 +55,7 @@ async function getLiveLeetCodeStats(username = 'devanshk14') {
     return null;
   }
 }
-
-// 3. Initialize Groq SDK
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-
-// 4. Chat Endpoint
 app.post('/api/chat', async (req, res) => {
   try {
     const { message, history } = req.body;
