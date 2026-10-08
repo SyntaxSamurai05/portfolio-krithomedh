@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Devansh Kommi | Software Engineer & Systems Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="variables.css" />
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="layout.css" />
@@ -12,16 +15,20 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
+
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="brand-logo">Devansh's<span> Portfolio</span></a>
+      <a href="#" class="brand-logo">Devansh<span>.dev</span></a>
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#experience" class="nav-item">Experience</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#achievements" class="nav-item">Achievements</a>
+        <a href="#contact" class="nav-item">Contact</a>
+        <button id="terminalToggleBtn" class="terminal-nav-btn" title="Toggle Developer Terminal (` or Ctrl+~)">
+          <i class="fa-solid fa-terminal"></i> Terminal
+        </button>
         <a href="resume.pdf" target="_blank" class="nav-resume-btn">
           <i class="fa-solid fa-arrow-down-to-line"></i> Resume
         </a>
@@ -30,8 +37,32 @@
         </button>
       </div>
     </div>
+    
+    <div id="scrollProgressBar" class="scroll-progress-bar"></div>
   </nav>
+
   
+  <div id="terminalDrawer" class="terminal-drawer hidden">
+    <div class="terminal-bar">
+      <div class="terminal-dots">
+        <span class="dot dot-red" id="terminalCloseDot"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="terminal-title">devansh@vjiethub:~ (bash)</span>
+      <span class="terminal-hint">Press ` or ESC to close</span>
+    </div>
+    <div id="terminalOutput" class="terminal-output">
+      <p class="term-greeting">Devansh's Interactive Portfolio Shell v1.0.0</p>
+      <p class="term-dim">Type <span class="term-highlight">help</span> for a list of available commands.</p>
+    </div>
+    <div class="terminal-input-row">
+      <span class="term-prompt">guest@devansh:~$</span>
+      <input type="text" id="terminalInput" autocomplete="off" spellcheck="false" />
+    </div>
+  </div>
+
+
   <header id="about" class="section hero-section">
     <div class="container hero-grid">
       <div class="hero-content">
@@ -39,10 +70,10 @@
           <span class="status-dot"></span> Available for Software & Systems Roles
         </div>
         <h1 class="hero-title">
-          Writing Purposeful Code. Building <span class="gradient-text">Scalable Projects</span>.
+          Writing Clean Code. Shipping <span class="gradient-text">High-Impact Projects</span>.
         </h1>
         <p class="hero-summary">
-          Hi, I'm <strong>KOMMI VENKATA SAI DEVANSH</strong>. I'm pursuing a B.Tech in CSE at <strong>VNR VJIET</strong> alongside a BS in Data Science at <strong>IIT Madras</strong>. I specialize in distributed full-stack platforms, low-level OS process management simulations, and offline edge AI workflows.
+          Hi, I'm <strong>Devansh Kommi</strong>. I'm pursuing a B.Tech in CSE at <strong>VNR VJIET</strong> alongside a BS in Data Science at <strong>IIT Madras</strong>. I specialize in distributed full-stack platforms, low-level OS process management simulations, and offline edge AI workflows.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Explore Projects</a>
@@ -61,23 +92,24 @@
     </div>
   </header>
 
+  
   <section class="section metrics-section">
     <div class="container metrics-grid">
-      <div class="metric-card">
+      <div class="metric-card reveal">
         <div class="metric-icon"><i class="fa-solid fa-code-commit"></i></div>
         <div class="metric-info">
-          <h3>70+</h3>
+          <h3>250+</h3>
           <p>LeetCode Problems Solved</p>
         </div>
       </div>
-      <div class="metric-card">
+      <div class="metric-card reveal">
         <div class="metric-icon"><i class="fa-brands fa-github-alt"></i></div>
         <div class="metric-info">
-          <h3>5+</h3>
+          <h3>12+</h3>
           <p>Public GitHub Repositories</p>
         </div>
       </div>
-      <div class="metric-card">
+      <div class="metric-card reveal">
         <div class="metric-icon"><i class="fa-solid fa-graduation-cap"></i></div>
         <div class="metric-info">
           <h3>Dual Degree</h3>
@@ -87,13 +119,14 @@
     </div>
   </section>
 
+  
   <section id="experience" class="section">
     <div class="container">
       <h2 class="section-heading">Experience & Education</h2>
       <p class="section-subtext">Academic foundation, technical hackathons, and systems research.</p>
 
       <div class="timeline">
-        <div class="timeline-item">
+        <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <span class="timeline-date">September 2026</span>
@@ -103,7 +136,7 @@
           </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <span class="timeline-date">2025 — Present</span>
@@ -113,7 +146,7 @@
           </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <span class="timeline-date">2025 — Present</span>
@@ -129,15 +162,30 @@
   
   <section id="projects" class="section section-alt">
     <div class="container">
-      <h2 class="section-heading">Featured Engineering Projects</h2>
-      <p class="section-subtext">Selected works demonstrating backend architecture, systems design, and edge machine learning.</p>
+      <div class="projects-header-row">
+        <div>
+          <h2 class="section-heading">Featured Engineering Projects</h2>
+          <p class="section-subtext">Selected works demonstrating backend architecture, systems design, and edge machine learning.</p>
+        </div>
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="systems">Systems / C</button>
+          <button class="filter-btn" data-filter="ai">AI / ML</button>
+          <button class="filter-btn" data-filter="java">Java OOP</button>
+        </div>
+      </div>
 
       <div class="projects-grid">
-        <article class="project-card">
+        <!-- MedVault -->
+        <article class="project-card reveal" data-category="fullstack">
           <div class="project-top">
             <span class="project-category">Full-Stack / Healthcare</span>
-            <div class="project-links">
-              <a href="https://github.com/SyntaxSamurai05" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <div class="project-card-actions">
+              <button class="project-ai-btn" data-ask="Can you explain the architecture and WebSocket consent verification built for MedVault Core?" title="Ask AI about this project">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI
+              </button>
+              <a href="https://github.com/SyntaxSamurai05" target="_blank" title="Source Code"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
           <h3>MedVault Core</h3>
@@ -146,16 +194,35 @@
             <li>WebSocket engine for instant biometric/consent verification before record access.</li>
             <li>RESTful API suite for audit trail logging, doctor accounts, and encrypted medical metadata.</li>
           </ul>
+          <div class="project-inspect-wrap">
+            <button class="snippet-toggle-btn" data-target="snippet-medvault">
+              <i class="fa-solid fa-code"></i> Inspect Architecture
+            </button>
+            <pre id="snippet-medvault" class="code-drawer hidden"><code>// WebSocket Doctor Consent Handshake
+io.on('connection', (socket) => {
+  socket.on('request_access', async ({ patientId, doctorId }) => {
+    const consentGranted = await verifyBiometricNonce(patientId);
+    if (consentGranted) {
+      const ephemeralSessionToken = signAuditClaim(doctorId, '15m');
+      socket.emit('access_approved', { token: ephemeralSessionToken });
+    }
+  });
+});</code></pre>
+          </div>
           <div class="tech-tags">
             <span>Node.js</span><span>Express</span><span>MongoDB</span><span>WebSockets</span>
           </div>
         </article>
 
-        <article class="project-card">
+        
+        <article class="project-card reveal" data-category="systems">
           <div class="project-top">
             <span class="project-category">Systems / OS</span>
-            <div class="project-links">
-              <a href="https://github.com/SyntaxSamurai05" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <div class="project-card-actions">
+              <button class="project-ai-btn" data-ask="How does Devansh's CPU scheduling simulator in C handle Round Robin and preemptive scheduling?" title="Ask AI about this project">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI
+              </button>
+              <a href="https://github.com/SyntaxSamurai05" target="_blank" title="Source Code"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
           <h3>CPU Scheduling Simulator</h3>
@@ -164,16 +231,36 @@
             <li>Core scheduling engine written in C executing FCFS, SJF, SRTF, Priority, and Round Robin.</li>
             <li>Flask web layer transforming C process traces into dynamic execution charts.</li>
           </ul>
+          <div class="project-inspect-wrap">
+            <button class="snippet-toggle-btn" data-target="snippet-cpu">
+              <i class="fa-solid fa-code"></i> Inspect Architecture
+            </button>
+            <pre id="snippet-cpu" class="code-drawer hidden"><code>// Core Round Robin Quantum Loop (C)
+while (completed < total_processes) {
+  for (int i = 0; i < total_processes; i++) {
+    if (p[i].remaining_time > 0 && p[i].arrival_time <= current_time) {
+      int slice = (p[i].remaining_time > quantum) ? quantum : p[i].remaining_time;
+      current_time += slice;
+      p[i].remaining_time -= slice;
+      record_gantt_slice(p[i].pid, slice);
+    }
+  }
+}</code></pre>
+          </div>
           <div class="tech-tags">
             <span>C</span><span>Python</span><span>Flask</span><span>Systems Architecture</span>
           </div>
         </article>
 
-        <article class="project-card">
+  
+        <article class="project-card reveal" data-category="ai">
           <div class="project-top">
             <span class="project-category">Edge AI / Security</span>
-            <div class="project-links">
-              <a href="https://github.com/SyntaxSamurai05" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <div class="project-card-actions">
+              <button class="project-ai-btn" data-ask="What was the iQOO Hackathon project Repo Guardian and how did Devansh run it locally with llama.cpp?" title="Ask AI about this project">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI
+              </button>
+              <a href="https://github.com/SyntaxSamurai05" target="_blank" title="Source Code"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
           <h3>Repo Guardian</h3>
@@ -182,16 +269,29 @@
             <li>Quantized local LLMs executed via llama.cpp for zero-data-leak vulnerability analysis.</li>
             <li>Static analysis pipelines identifying prompt injections and security antipatterns.</li>
           </ul>
+          <div class="project-inspect-wrap">
+            <button class="snippet-toggle-btn" data-target="snippet-repoguardian">
+              <i class="fa-solid fa-code"></i> Inspect Architecture
+            </button>
+            <pre id="snippet-repoguardian" class="code-drawer hidden"><code># Local Quantized GGUF Inspection Pipeline
+./main -m ./models/qwen2.5-coder-7b-instruct-q4_k_m.gguf \
+  --threads 6 --temp 0.1 \
+  -p "Analyze this diff for memory leaks or prompt injections: $(git diff HEAD~1)" \
+  --ctx-size 4096</code></pre>
+          </div>
           <div class="tech-tags">
             <span>Python</span><span>llama.cpp</span><span>GGUF</span><span>Bash</span>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card reveal" data-category="java">
           <div class="project-top">
             <span class="project-category">OOP / Backend</span>
-            <div class="project-links">
-              <a href="https://github.com/SyntaxSamurai05" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <div class="project-card-actions">
+              <button class="project-ai-btn" data-ask="How is OOP and JDBC structured in Devansh's Vehicle Rental Management System?" title="Ask AI about this project">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI
+              </button>
+              <a href="https://github.com/SyntaxSamurai05" target="_blank" title="Source Code"><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
           <h3>Vehicle Rental System</h3>
@@ -200,6 +300,21 @@
             <li>Strict OOP architecture utilizing polymorphism, custom exceptions, and encapsulation.</li>
             <li>Direct JDBC connection layer managing rental transactions and availability records.</li>
           </ul>
+          <div class="project-inspect-wrap">
+            <button class="snippet-toggle-btn" data-target="snippet-vehicle">
+              <i class="fa-solid fa-code"></i> Inspect Architecture
+            </button>
+            <pre id="snippet-vehicle" class="code-drawer hidden"><code>// Transaction Management with Direct JDBC
+try (Connection conn = DatabaseConnection.getConnection()) {
+    conn.setAutoCommit(false);
+    updateAvailabilityStmt.setString(1, vehicleId);
+    insertBookingStmt.setDouble(2, calculatedFee);
+    conn.commit();
+} catch (SQLException e) {
+    conn.rollback();
+    throw new RentalTransactionException("Failed to reserve vehicle", e);
+}</code></pre>
+          </div>
           <div class="tech-tags">
             <span>Java</span><span>JDBC</span><span>MySQL</span><span>OOP Design</span>
           </div>
@@ -214,28 +329,28 @@
       <p class="section-subtext">Technologies, languages, and tools I use to build production-grade applications.</p>
 
       <div class="skills-grid">
-        <div class="skill-group">
+        <div class="skill-group reveal">
           <h4><i class="fa-solid fa-code"></i> Programming Languages</h4>
           <div class="skill-pills">
             <span>Python</span><span>C</span><span>Java</span><span>JavaScript</span><span>SQL</span>
           </div>
         </div>
 
-        <div class="skill-group">
+        <div class="skill-group reveal">
           <h4><i class="fa-solid fa-layer-group"></i> Frameworks & Runtimes</h4>
           <div class="skill-pills">
             <span>Node.js</span><span>Express.js</span><span>Flask</span><span>Tailwind CSS</span>
           </div>
         </div>
 
-        <div class="skill-group">
+        <div class="skill-group reveal">
           <h4><i class="fa-solid fa-database"></i> Databases & Dev Tools</h4>
           <div class="skill-pills">
             <span>MongoDB Atlas</span><span>MySQL</span><span>JDBC</span><span>Git & GitHub</span><span>Postman</span>
           </div>
         </div>
 
-        <div class="skill-group">
+        <div class="skill-group reveal">
           <h4><i class="fa-solid fa-microchip"></i> Core Competencies</h4>
           <div class="skill-pills">
             <span>Data Structures & Algorithms</span><span>OS Scheduling</span><span>REST APIs</span><span>Edge AI</span>
@@ -249,21 +364,21 @@
     <div class="container">
       <h2 class="section-heading">Key Achievements</h2>
       <div class="achievements-list">
-        <div class="achievement-card">
+        <div class="achievement-card reveal">
           <i class="fa-solid fa-trophy"></i>
           <div>
             <h4>Competitive Programming Track Record</h4>
             <p>Successfully solved over 250 algorithmic problems on LeetCode with continuous contest participation on Codeforces.</p>
           </div>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card reveal">
           <i class="fa-solid fa-medal"></i>
           <div>
             <h4>iQOO Hackathon City Battle</h4>
             <p>Led Team Vortex3 in building Repo Guardian, an offline AI security code review engine presented in Hyderabad.</p>
           </div>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card reveal">
           <i class="fa-solid fa-satellite-dish"></i>
           <div>
             <h4>IoT Smart Irrigation Prototype</h4>

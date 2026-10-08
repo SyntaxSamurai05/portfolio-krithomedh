@@ -10,6 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// 1. Read profile knowledge base
 let profileData = {};
 try {
   const rawData = fs.readFileSync('./profileData.json', 'utf-8');
@@ -18,6 +19,7 @@ try {
   console.error('Error loading profileData.json:', err);
 }
 
+// 2. Fetch live LeetCode stats via GraphQL
 async function getLiveLeetCodeStats(username = 'devanshk14') {
   try {
     const query = `
@@ -57,7 +59,11 @@ async function getLiveLeetCodeStats(username = 'devanshk14') {
     return null;
   }
 }
+
+// 3. Initialize Groq SDK
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
+// 4. Chat Endpoint
 app.post('/api/chat', async (req, res) => {
   try {
     const { message, history } = req.body;
@@ -70,25 +76,24 @@ app.post('/api/chat', async (req, res) => {
     const leetCodeInfo = liveLeetCode || profileData.codingProfiles.leetcode.solvedProblems;
 
     const systemPrompt = `
-You are KOMMI VENKATA SAI DEVANSH's personal AI portfolio assistant.
+You are the personal AI portfolio assistant for Devansh Kommi.
 Your goal is to answer visitor questions directly, clearly, concisely, and professionally.
 
-Devansh's Information:
+Devansh's Profile Knowledge:
 ${JSON.stringify(profileData, null, 2)}
 
 Strict Response Rules:
-1. Speak in simple, clear, conversational English.
-2. DO NOT ramble, repeat yourself, or generate filler introductions.
-3. For greetings ("hi", "hello", "who are you"):
-   - Say: "Hello! I'm Devansh's AI assistant. Ask me about his engineering projects, technical stack, LeetCode stats, or resume!"
-4. For LeetCode questions:
+1. Speak in clean, conversational English without internal thought leaks or meta-announcements.
+2. For greetings ("hi", "hello", "who are you"):
+   - Greet politely and state that you are Devansh's portfolio assistant ready to answer questions regarding his software projects, coding stats, tech stack, or resume.
+3. For LeetCode questions:
    - State the exact stats: "${leetCodeInfo}".
-   - Provide the direct link: [LeetCode Profile](${profileData.codingProfiles.leetcode.url}).
-5. For GitHub / projects:
-   - Name the project, state 1-2 sentence description, and list the stack.
-6. For Resume:
-   - Provide: "[Download Resume](resume.pdf)".
-7. Format with clean bullet points and short paragraphs. Avoid dense walls of text.
+   - Provide direct link: [LeetCode Profile](${profileData.codingProfiles.leetcode.url}).
+4. For GitHub / projects:
+   - Provide clear, direct summaries of MedVault Core, CPU Process Scheduling Simulator, Repo Guardian, or Vehicle Rental System with their associated tech stacks.
+5. For Resume:
+   - Output: "[Download Resume](resume.pdf)".
+6. Structure responses with short paragraphs and bullet points. Avoid dense walls of text.
 `;
 
     const messages = [
@@ -104,7 +109,7 @@ Strict Response Rules:
       messages: messages,
       model: 'qwen/qwen3.8-27b',
       temperature: 0.2,
-      max_tokens: 300,
+      max_tokens: 350,
     });
 
     const replyText = chatCompletion.choices[0]?.message?.content || "No response generated.";

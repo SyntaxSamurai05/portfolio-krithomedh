@@ -1,23 +1,24 @@
 {
-  "name": "KOMMI VENKATA SAI DEVANSH",
+  "name": "Devansh Kommi",
   "title": "Computer Science Undergraduate & Full-Stack / Systems Developer",
   "location": "Hyderabad, Telangana, India",
   "email": "kommidevansh@gmail.com",
   "github": {
     "url": "https://github.com/SyntaxSamurai05",
     "username": "SyntaxSamurai05",
-    "publicRepositoriesCount": "5+ repositories",
+    "publicRepositoriesCount": "12+ repositories",
     "primaryProjects": ["MedVault Core", "CPU Scheduling Simulator", "Repo Guardian", "Vehicle Rental System"]
   },
   "codingProfiles": {
     "leetcode": {
       "url": "https://leetcode.com/u/devanshk14/",
       "username": "devanshk14",
-      "solvedProblems": "70+ algorithmic problems solved",
+      "solvedProblems": "250+ algorithmic problems solved",
       "focus": "Arrays, Dynamic Programming, Two Pointers, Trees, Graphs"
     },
     "codeforces": {
-      "username": "levi_phantom05",
+      "username": "SyntaxSamurai05",
+      "url": "https://codeforces.com/profile/SyntaxSamurai05",
       "status": "Active competitive coding contestant"
     }
   },
@@ -99,7 +100,7 @@
     }
   ],
   "achievements": [
-    "70+ algorithmic challenges solved on LeetCode across arrays, dynamic programming, and graphs.",
+    "250+ algorithmic challenges solved on LeetCode across arrays, dynamic programming, and graphs.",
     "Selected as Team Lead for Team Vortex3 at the iQOO Hackathon City Battle.",
     "Dual-enrolled engineering scholar at VNR VJIET (B.Tech CSE) and IIT Madras (BS Data Science)."
   ],
